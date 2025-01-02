@@ -476,7 +476,7 @@ nav ul li a.active::after {
   align-items: center;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 20px;
+  /* margin: 20px; */
   gap: 20px;
   width: 100%;
   margin: 0;
@@ -542,13 +542,17 @@ nav ul li a.active::after {
   min-height: 85vh;
   justify-content: center;
   margin-top: 70px;
-  margin-left: 70px;
+  /* margin-left: 70px; */
+  margin-left: auto;
+  margin-right: auto;
 }
 /* Responsive Design */
 @media (max-width: 768px) {
   .feature-box {
-    width: 75%;
-    margin-right: 120px;
+    /* width: 75%; */
+    /* margin-right: 120px; */
+    width: 90%;
+    margin: 0 auto;
   }
   .main-heading {
     font-size: 2.5em;
@@ -1117,7 +1121,7 @@ html {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f4f8fc;
+  background-color: white;
 }
 .containersssssss {
   display: flex;
@@ -1485,6 +1489,7 @@ html {
 
   .main-info-item {
     grid-template-columns: 1fr; /* Stack the info items on small screens */
+    margin-left: 215px;
   }
 
   .info-item {
@@ -1513,6 +1518,12 @@ html {
 }
 
 @media (max-width: 480px) {
+  .main-info-item {
+    /* grid-template-columns: 1fr;  */
+    /* margin-left: 215px; */
+    margin-left: 20px;
+  }
+
   .contact-form h1 {
     font-size: 28px;
     margin-top: 90px;
@@ -1553,9 +1564,12 @@ html {
   background-color: white;
   align-items: center;
   justify-content: center;
-  margin: 50px;
-  gap: -10px;
-  margin-top: -20px;
+  /* margin: 50px; */
+  /* gap: -10px; */
+  /* margin-top: -20px; */
+  margin: 40px auto;
+  gap: 30px;  /* Positive gap for spacing */
+  padding: 20px;
 }
 
 .image-section {
@@ -1648,15 +1662,15 @@ html {
 .name-boxeses {
   /* margin-top: 10px; */
   padding: 0px 21px;
-  border: 2px solid #0077b6;
+  /* border: 2px solid #0077b6; */
   display: inline-block;
   /* font-size: 20px; */
   /* font-weight: bold; */
   color: #0077b6;
   border-radius: 8px;
-  background-color: #f0f8ff;
+  /* background-color: #f0f8ff; */
   position: relative;
-  top: -64px;
+  top: -35px;
   left: 180px;
 }
 .nameesess {
@@ -1687,10 +1701,19 @@ html {
  margin-top: 60px;
 }
 
-@media (max-width: 728px) {
+@media (max-width: 768px) {
   .aquapulse-container {
       flex-direction: column;
+      text-align: center;
+      gap: 40px;
   }
+  .image-section img {
+    width: 80%;
+  }
+  .name-boxeses{
+    left:1px
+  }
+  
 }
 
 @media (max-width: 480px) {
@@ -1709,17 +1732,17 @@ html {
 
   .name-boxeses {
     /* margin-top: 10px; */
-    padding: 0px 21px;
-    border: 2px solid #0077b6;
+    /* padding: 0px 21px; */
+    /* border: 2px solid #0077b6; */
     display: inline-block;
     /* font-size: 20px; */
     /* font-weight: bold; */
-    color: #0077b6;
+    /* color: #0077b6; */
     border-radius: 8px;
-    background-color: #f0f8ff;
+    /* background-color: #f0f8ff; */
     position: relative;
-    top: -40px;
-    left: 50px;
+    top: -20px;
+    left: 1px;
   }
   .nameesess {
     font-size: 18px;
