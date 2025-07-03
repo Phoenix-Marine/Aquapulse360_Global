@@ -147,12 +147,12 @@
       </div>
       <div class="category" onclick="filterProducts('crab_lobster')">
         <img src="./Assets/3.png" alt="Crab & Lobster" />
-        <h5>Crab & Lobster</h5>
+        <h5>Crab</h5>
       </div>
-      <div class="category" onclick="filterProducts('cephalopods')">
+      <!-- <div class="category" onclick="filterProducts('cephalopods')">
         <img src="./Assets/4.png" alt="Cephalopods" />
         <h5>Cephalopods</h5>
-      </div>
+      </div> -->
     </div>
 
     <div id="products-page" class="products-page">
@@ -259,12 +259,11 @@
             </div>
           </div>
         </div>
-        <div class="product-card fish">
+        <!-- <div class="product-card fish">
           <img src="./Assets/Species Picture/6.png" alt="Cobia" />
           <div class="product-info">
             <h5>Cobia</h5>
             <p><i>Rachycentron canadum</i></p>
-            <!-- <p>North Atlantic Ocean | Norway</p> -->
             <div class="tags">
               <span>WL</span>
               <span>Fillet</span>
@@ -278,7 +277,6 @@
           <div class="product-info">
             <h5>Tiger Grouper</h5>
             <p><i>Epinephelus fuscoguttatus</i></p>
-            <!-- <p>North Atlantic Ocean | Norway</p> -->
             <div class="tags">
               <span>WL</span>
               <span>Fillet</span>
@@ -292,7 +290,6 @@
           <div class="product-info">
             <h5>Milkfish</h5>
             <p><i>Chanos chanos</i></p>
-            <!-- <p>North Atlantic Ocean | Norway</p> -->
             <div class="tags">
               <span>WL</span>
               <span>Fillet</span>
@@ -306,14 +303,13 @@
           <div class="product-info">
             <h5>Mullet</h5>
             <p><i>Mugil cephalus</i></p>
-            <!-- <p>North Atlantic Ocean | Norway</p> -->
             <div class="tags">
               <span>WL</span>
               <span>Fillet</span>
               <span>Roe</span>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="product-card crab_lobster">
           <img src="./Assets/Species Picture/10.png" alt="Mangrove Crabs" />
           <div class="product-info">
@@ -327,12 +323,11 @@
             </div>
           </div>
         </div>
-        <div class="product-card crab_lobster">
+        <!-- <div class="product-card crab_lobster">
           <img src="./Assets/Species Picture/11.png" alt="Flower Crab" />
           <div class="product-info">
             <h5>Flower Crab</h5>
             <p><i>Portunus pelagicus</i></p>
-            <!-- <p>North Atlantic Ocean | Norway</p> -->
             <div class="tags">
               <span>WL</span>
               <span>Meat</span>
@@ -348,7 +343,6 @@
           <div class="product-info">
             <h5>Scaloped Spiny Lobster</h5>
             <p><i>Panulirus homarus</i></p>
-            <!-- <p>North Atlantic Ocean | Norway</p> -->
             <div class="tags">
               <span>WL</span>
               <span>Tail</span>
@@ -356,7 +350,7 @@
               <span>Live</span>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="product-card cephalopods">
           <img src="./Assets/Species Picture/13.png" alt="Squid" />
           <div class="product-info">
@@ -1197,6 +1191,39 @@
 
             observer.observe(textSection);
         });
+//  start
+        // Function to center single items in fish and crab sections
+        function centerSingleItems() {
+            // Get all fish and crab cards
+            const fishCards = document.querySelectorAll('.product-card.fish');
+            const crabCards = document.querySelectorAll('.product-card.crab_lobster');
+            
+            // Center fish cards if there's only one
+            if (fishCards.length === 1) {
+                fishCards[0].style.gridColumn = '2 / span 2';
+                fishCards[0].style.justifySelf = 'center';
+                fishCards[0].style.maxWidth = '300px';
+            }
+            
+            // Center crab cards if there's only one
+            if (crabCards.length === 1) {
+                crabCards[0].style.gridColumn = '2 / span 2';
+                crabCards[0].style.justifySelf = 'center';
+                crabCards[0].style.maxWidth = '300px';
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', centerSingleItems);
+        
+        // Also run when filtering products
+        const originalFilterProducts = window.filterProducts;
+        window.filterProducts = function(category) {
+            originalFilterProducts(category);
+            // Small delay to allow the DOM to update
+            setTimeout(centerSingleItems, 10);
+        };
+        // end
     </script>
   </body>
 </html>

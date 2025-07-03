@@ -698,6 +698,26 @@ html {
   max-width: 1200px;
   margin: 100px auto;
 }
+/* start */
+
+/* Center single items in fish and crab sections */
+.product-grid:has(> .product-card.fish:only-of-type) {
+  display: flex;
+  justify-content: center;
+}
+
+.product-grid:has(> .product-card.crab:only-of-type) {
+  display: flex;
+  justify-content: center;
+}
+
+.product-card.fish:only-of-type,
+.product-card.crab:only-of-type {
+  grid-column: 2 / span 2;
+  max-width: 300px;
+  margin: 0 auto;
+}
+/* end */
 
 /* Product Card Styling */
 .product-card {
