@@ -1194,6 +1194,13 @@
 //  start
         // Function to center single items in fish and crab sections
         function centerSingleItems() {
+          const screenWidth = window.innerWidth;
+
+// Skip centering on small screens
+if (screenWidth <= 768) {
+    return;
+}
+
             // Get all fish and crab cards
             const fishCards = document.querySelectorAll('.product-card.fish');
             const crabCards = document.querySelectorAll('.product-card.crab_lobster');
@@ -1223,7 +1230,7 @@
             // Small delay to allow the DOM to update
             setTimeout(centerSingleItems, 10);
         };
-        end
+        // end
     </script>
   </body>
 </html>
